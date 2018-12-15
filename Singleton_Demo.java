@@ -2,7 +2,7 @@ import java.lang.*;
 
 class Singleton_Demo
 {
-    private static Singleton_Demo obj = new Singleton_Demo();
+    static Singleton_Demo obj = new Singleton_Demo();
     /*
     obj is static, so that its memory gets created at the time of class loading
     and its memory gets shared
@@ -12,17 +12,21 @@ class Singleton_Demo
     {
         System.out.println("Constructor of class");
     }
-    
-    public static Singleton_Demo getReference()   //this method of class is also static, so that we can call it by using class name
-    {
-        return Singleton_Demo.obj;    //this will return the 'obj'
-    }
 }
 
 class Test
 {
     public static void main(String[] args)
     {
-        Singleton_Demo ref = Singleton_Demo.getreference();
+        Singleton_Demo ref = Singleton_Demo.obj;
+        System.out.println(ref);
+        
+        Singleton_Demo ref2 = Singleton_Demo.obj;
+        System.out.println(ref2);
     }
 }
+
+/*
+out put:
+it will print same hashcode of both the references
+*/
