@@ -24,5 +24,13 @@ class Test
     public static void main(String[] args)
     {
         Singleton_Demo ref = Singleton_Demo.getreference();
+        System.out.println(ref);
+        
+        Singleton_Demo ref1 = Singleton_Demo.getreference();
+        System.out.println(ref2);
     }
 }
+/*
+Out put:
+This will print same hash code for both the references
+*/
